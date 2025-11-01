@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Royal Blue Primary */
+    /* Increased contrast for light mode: slightly darker background, cards and borders */
+    --background: 214 18% 94%; /* was 220 15% 96% */
+    --foreground: 214 60% 16%;
+
+    --card: 220 20% 96%; /* was 220 20% 98% */
+    --card-foreground: 214 58% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 60% 16%;
+    
+    --primary: 214 100% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 100% 58%;
+    
+    /* Emerald Secondary */
+    --secondary: 160 84% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 160 84% 45%;
+    
+    /* Amber Accent */
+    --accent: 38 95% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 38 100% 62%;
+    
+  --muted: 220 15% 92%;
+  --muted-foreground: 214 20% 30%;
+    
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+  --border: 220 20% 82%;
+  --input: 220 20% 86%;
+    --ring: 214 100% 48%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214, 100%, 48%), hsl(160, 84%, 35%));
+  --gradient-hero: linear-gradient(135deg, hsl(214, 18%, 95%) 0%, hsl(220, 15%, 94%) 100%);
+  --gradient-subtle: linear-gradient(180deg, hsl(214, 18%, 94%), hsl(214, 18%, 92%));
+    
+    /* Shadows */
+    --shadow-primary: 0 10px 40px -10px hsl(214 100% 48% / 0.25);
+    --shadow-secondary: 0 10px 40px -10px hsl(160 84% 35% / 0.25);
+    --shadow-glow: 0 0 60px hsl(214 100% 58% / 0.3);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 214 50% 8%;
+    --foreground: 0 0% 98%;
+    
+    --card: 214 45% 10%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 214 45% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 214 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 100% 62%;
+    
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 160 84% 49%;
+    
+    --accent: 38 100% 56%;
+    --accent-foreground: 214 100% 12%;
+    --accent-glow: 38 100% 66%;
+    
+    --muted: 214 30% 15%;
+    --muted-foreground: 214 10% 65%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 214 30% 18%;
+    --input: 214 30% 18%;
+    --ring: 214 100% 52%;
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214, 100%, 52%), hsl(160, 84%, 39%));
+    --gradient-hero: linear-gradient(135deg, hsl(214, 50%, 12%) 0%, hsl(160, 60%, 12%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(214, 50%, 8%), hsl(214, 45%, 10%));
+    
+    /* Dark shadows */
+    --shadow-primary: 0 10px 40px -10px hsl(214 100% 52% / 0.5);
+    --shadow-secondary: 0 10px 40px -10px hsl(160 84% 39% / 0.5);
+    --shadow-glow: 0 0 60px hsl(214 100% 62% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ReactFlow custom node styles */
+.react-flow__node {
+  @apply rounded-lg border-2 px-4 py-3 font-medium shadow-lg transition-all;
+}
+
+.react-flow__node-input {
+  @apply border-primary bg-primary/10 text-primary;
+}
+
+.react-flow__node-output {
+  @apply border-secondary bg-secondary/10 text-secondary;
+}
+
+.react-flow__node-default {
+  @apply border-border bg-card text-card-foreground;
+}
+
+.react-flow__node.selected {
+  @apply ring-2 ring-primary ring-offset-2 ring-offset-background;
+}
+
+.react-flow__edge-path {
+  @apply stroke-primary stroke-2;
+}
+
+.react-flow__handle {
+  @apply bg-primary;
+}

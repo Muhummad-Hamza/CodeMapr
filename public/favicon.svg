@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="CodeMapr">
+  <title>CodeMapr</title>
+  <!-- Rounded background so the icon reads well on light and dark browser chrome -->
+  <rect width="120" height="120" rx="20" fill="#0f172a"/>
+  <!-- Brackets and slash icon in white for high contrast -->
+  <g fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 36 L24 60 L40 84"/>
+    <path d="M80 36 L96 60 L80 84"/>
+    <path d="M52 44 L68 76"/>
+  </g>
+</svg>
